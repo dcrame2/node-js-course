@@ -6,6 +6,7 @@ const {
   updateTour,
   deleteTour,
   aliasTopTours,
+  getTourStats,
   // checkId,
   // checkBody,
 } = require('../controllers/tourController');
@@ -18,6 +19,8 @@ const router = express.Router();
 // Check if body contains the name and price property
 // If not, send back a 404 (bad request)
 // Add it to the post handler stack
+
+router.route('/tour-stats').get(getTourStats);
 
 router.route('/top-5-cheap').get(aliasTopTours, getAllTours);
 
