@@ -52,7 +52,9 @@ exports.getTour = async (req, res) => {
   }
 };
 
-const catchAsync = (fn) => {};
+const catchAsync = (fn) => {
+  fn(req, res, next);
+};
 
 exports.createTour = async (req, res) => {
   try {
